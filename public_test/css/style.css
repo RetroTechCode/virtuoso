@@ -1,0 +1,108 @@
+/* establish global variable */
+:root{
+  --muktaFamily:  Mukta, Arial, Helvetica, sans-serif;
+  --darkBlue: rgb(40, 68, 102);
+  --lightBlue: rgb(51, 147, 211);
+  --lightGray: rgba(169, 169, 169, 0.404);
+  --darkGray: rgb(143, 143, 143);
+  --white: rgba(255, 255, 255, 0.95);
+  --darkBlueGray: rgba(50, 61, 79);
+}
+
+
+#header{
+  background-color: var(--darkBlue);
+}
+
+body {
+  background-color: #f9f9fa
+}
+
+.stretch-card>.card {
+  width: 100%;
+  min-width: 100%
+}
+
+.flex {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto
+}
+
+.padding {
+  padding: 3rem !important
+}
+
+.card-sub {
+  cursor: move;
+  border: none;
+  background-color: var(--lightBlue);
+  -webkit-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05), 0 -2px 1px -2px rgba(0, 0, 0, 0.04), 0 0 0 -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.05), 0 -2px 1px -2px rgba(0, 0, 0, 0.04), 0 0 0 -1px rgba(0, 0, 0, 0.05)
+}
+
+.card-header {
+  padding: 4px;
+}
+
+.card-sub:hover{
+  box-shadow: 1px 1px 2px 1px var(--lightGray);
+}
+
+.card-sub:active{
+  box-shadow: 2px 2px 2px 2px var(--darkGray);
+}
+
+.card-block {
+  padding: 1.25rem;
+  background-color: #fff !important;
+  margin-bottom: 12px;
+}
+
+.user-name {
+  font-size: 0.7rem;
+  margin-bottom: 5px;
+}
+
+.post {
+  text-align: left;
+}
+
+#user-prof-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;  
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  padding: 2.5px;
+}
+
+.employee-name {
+  position: relative;
+  color: var(--white);
+  top: -58px;
+}
+
+
+
+.employee-details {
+  position: relative;
+  top: -40px;
+}
+
+
+
+/* Media Queries */
+
+@media (max-width:991.98px) {
+  .padding {
+      padding: 1.5rem
+  }
+}
+
+@media (max-width:767.98px) {
+  .padding {
+      padding: 1rem
+  }
+}
