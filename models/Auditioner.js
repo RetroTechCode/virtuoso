@@ -25,18 +25,22 @@ Auditioner.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-      years_played: {
+      band_id: {
         type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      fk_genre: {
-        type: DataTypes.STRING,
-        allowNull: false,
         references: {
-          model: 'band',
-          key: 'genre'
+          model: 'auditioner',
+          key: 'id'
         }
       },
+      years_played: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        allowNull: false
+      },
+      // genre: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false,
+      // },
       email: {
         type: DataTypes.STRING,
         allowNull: false,

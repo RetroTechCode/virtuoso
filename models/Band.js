@@ -22,13 +22,17 @@ Band.init(
         allowNull: true
       },
       post_content: {
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: true
       },
-      genre: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+      // fk_genre: {
+      //   type: DataTypes.STRING,        
+      //   allowNull: false,
+      //   references: {
+      //     model: 'band',
+      //     key: 'genre'
+      //   }
+      // },
       need_date: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -49,16 +53,17 @@ Band.init(
           len: [8],
         },
       },
-      fk_instrument: {
-        type: DataTypes.STRING,
+      auditioner_id: {
+        type: DataTypes.INTEGER,
         references: {
           model: 'auditioner',
-          key: 'instrument'
+          key: 'id'
         }
       }
     },
     {
       sequelize,
+      timestamps: false,
       freezeTableName: true,
       underscored: true,
       modelName: 'band'

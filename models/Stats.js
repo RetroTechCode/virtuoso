@@ -24,9 +24,8 @@ Stats.init(
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      fk_band_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      band_id: {
+        type: DataTypes.INTEGER,        
         references: {
           model: 'band',
           key: 'id'
