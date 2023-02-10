@@ -2,7 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-class Band extends Model {}
+class Band extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 // create fields/columns for Band model
 Band.init(
@@ -29,14 +33,11 @@ Band.init(
         type: DataTypes.STRING,
         allowNull: true
       },
-      // fk_genre: {
-      //   type: DataTypes.STRING,        
-      //   allowNull: false,
-      //   references: {
-      //     model: 'band',
-      //     key: 'genre'
-      //   }
-      // },
+      date_created: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+      },
       need_date: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -66,6 +67,17 @@ Band.init(
       }
     },
     {
+      // create hooks that will hash password
+      hooks: {
+        beforeCreate: async (newUserData) => {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+          return newUserData;
+        },
+        beforeUpdate: async (updatedUserData) => {
+          updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+          return updatedUserData;
+        },
+      },
       sequelize,
       timestamps: false,
       freezeTableName: true,
