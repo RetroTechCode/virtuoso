@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Post model
+
 class Band extends Model {}
 
 // create fields/columns for Band model
@@ -12,6 +12,10 @@ Band.init(
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
+      },
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       band_name: {
         type: DataTypes.STRING,
