@@ -9,7 +9,8 @@ const bandSeeds = [
     fk_instrument: "Triangle",
     need_date: `2/23/2023`,
     email: "brick@test.com",
-    password: "bandPass1"
+    password: "bandPass1",
+    auditioner_id: 2,
   },
   {
     band_name: "Binky182",
@@ -19,7 +20,8 @@ const bandSeeds = [
     fk_instrument: "Guitar",
     need_date: `2/25/2023`,
     email: "travis@test.com",
-    password: "bandPass2"
+    password: "bandPass2",
+    auditioner_id: 3,
   },
   {
     band_name: "GitLab Punks",
@@ -29,7 +31,8 @@ const bandSeeds = [
     fk_instrument: "Drums",
     need_date: `3/1/2023`,
     email: "jake@statefarm.com",
-    password: "bandPass3"
+    password: "bandPass3",
+    auditioner_id: 1,
   },
 
 
