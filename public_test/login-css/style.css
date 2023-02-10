@@ -16,7 +16,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
   background: transparent;
 }
-
 body {
   background: #DCDDDF url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
   color: #000;
@@ -177,7 +176,7 @@ form:after {
   outline: none;
 }
 
-
+#username { background-position: 10px 10px !important }
 #email { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
 #datalistOptions { background-position: 10px 10px !important }
