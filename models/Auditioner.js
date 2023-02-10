@@ -28,7 +28,7 @@ Auditioner.init(
       band_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'auditioner',
+          model: 'band',
           key: 'id'
         }
       },
@@ -37,10 +37,6 @@ Auditioner.init(
         defaultValue: 0,
         allowNull: false
       },
-      // genre: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false,
-      // },
       email: {
         type: DataTypes.STRING,
         allowNull: false,

@@ -25,14 +25,6 @@ Band.init(
         type: DataTypes.STRING,
         allowNull: true
       },
-      // fk_genre: {
-      //   type: DataTypes.STRING,        
-      //   allowNull: false,
-      //   references: {
-      //     model: 'band',
-      //     key: 'genre'
-      //   }
-      // },
       need_date: {
         type: DataTypes.DATE,
         allowNull: false,
@@ -57,6 +49,13 @@ Band.init(
         type: DataTypes.INTEGER,
         references: {
           model: 'auditioner',
+          key: 'id'
+        }
+      },
+      stats_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'stats',
           key: 'id'
         }
       }
