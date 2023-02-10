@@ -16,6 +16,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
   background: transparent;
 }
+
 body {
   background: #DCDDDF url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
   color: #000;
@@ -139,7 +140,8 @@ form:after {
 }
 #content form { margin: 0 20px; position: relative }
 #content form input[type="text"],
-#content form input[type="password"] {
+#content form input[type="password"],
+#content form input[list="datalistOptions"] {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -174,8 +176,11 @@ form:after {
   border: 1px solid #ed1c24;
   outline: none;
 }
-#username { background-position: 10px 10px !important }
+
+
+#email { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
+#datalistOptions { background-position: 10px 10px !important }
 #content form input[type="submit"] {
   background: rgb(254,231,154);
   background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);
