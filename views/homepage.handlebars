@@ -1,1 +1,18 @@
 {{!-- Placeholder file, may need changed or deleted later --}}
+<div class="row" id="sortable"></div>
+    {{#each bands as |band|}}
+    <div class="col-md-3">
+      <div class="card-sub"> <img class="card-img-top img-fluid" id="user-prof-pic" alt="Card image cap">
+        <div class="card-block">
+          <div class="card-header">                
+            <h4 class="employee-name">Job Posted</h4>
+            <div class="employee-details">
+              <div class="user-name">Posted by {{band_name}} on 2/3/2023</div>            
+              <div class="post">{{post_content}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+</div>
