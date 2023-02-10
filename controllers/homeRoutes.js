@@ -171,13 +171,24 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/register', (req, res) => {
+router.get('/register-auditioner', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {    
     res.redirect('/profile');
     return;
   }  
-  res.render('register');
+  res.render('register-auditioner');
 });
+
+
+router.get('/register-band', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {    
+    res.redirect('/profile');
+    return;
+  }  
+  res.render('register-band');
+});
+
 
 module.exports = router;
