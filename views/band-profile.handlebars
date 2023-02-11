@@ -9,20 +9,20 @@
   <title>Virtuoso</title>
 </head>
 <body>
-  <header>
+  {{!-- <header>
     <nav class="navbar navbar-dark" id="header">
       <a class="mx-2 navbar-brand"><h2 class="position-absolute top-0 start-0 text-dark">Virtuoso</h2></a>
     </nav>
-  </header>
+  </header> --}}
 
   <main class ='p-1 mb-4 text-black text-center'>    
-    <!-- <form class="d-inline-flex">        
+    {{!-- <form class="d-inline-flex">        
       <button class="btn btn-light my-2 m-sm-1" id="home-button" type="submit">Home</button>
       <button class="btn btn-light my-2 m-sm-1" id="dashboard-button" type="submit">Dashboard</button>
       <button class="btn btn-danger my-2 m-sm-1" id="logout-button" type="submit">Logout</button>
-    </form> -->
-    <div class = 'container text-center m-10' id="banner-test">
-      <h3>Welcome, GitLab Punks</h3>
+    </form> --}}
+    <div class = 'container text-center m-10' id="banner">
+      <h4>Welcome, {{band_name}}</h4>
     </div>
 
     <section style="background-color: #eee;">
@@ -35,9 +35,9 @@
               <div class="card-body text-center">
                 <img src="concert-audienct.jpg" alt="avatar"
                   class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3">GitLab Punks</h5>
-                <p class="text-muted mb-1">Classic Rock</p>
-                <p class="text-muted mb-4">Manager: Jake</p>
+                <h5 class="my-3">{{band_name}}</h5>
+                <p class="text-muted mb-1">[GENRE PLACEHOLDER]</p>
+                <p class="text-muted mb-4">{{manager_name}}</p>
                 <div class="d-flex justify-content-center mb-2">
                   <button type="button" class="btn btn-primary">Post</button>
                   <button type="button" class="btn btn-outline-primary ms-1">Edit</button>
@@ -63,7 +63,7 @@
                     <p class="mb-0">Band Name</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">GitLab Punks</p>
+                    <p class="text-muted mb-0">{{band_name}}</p>
                   </div>
                 </div>
                 <hr>
@@ -72,7 +72,7 @@
                     <p class="mb-0">Email</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">jake@statefarm.com</p>
+                    <p class="text-muted mb-0">{{email}}</p>
                   </div>
                 </div>
                 <hr>
@@ -81,7 +81,7 @@
                     <p class="mb-0">Phone</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">(097) 234-5678</p>
+                    <p class="text-muted mb-0">PLACEHOLDER: (097) 234-5678</p>
                   </div>
                 </div>
                 <hr>
@@ -90,7 +90,7 @@
                     <p class="mb-0">Location</p>
                   </div>
                   <div class="col-sm-9">
-                    <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                    <p class="text-muted mb-0">PLACEHOLDER: Bay Area, San Francisco, CA</p>
                   </div>
                 </div>
               </div>

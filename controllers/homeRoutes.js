@@ -111,36 +111,36 @@ router.get('/', async (req, res) => {
 
 
 // Use withAuth middleware to prevent access to route
-// router.get('/profile', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Post,
-//         include: [
-//           {
-//           model: User,
-//           attributes: ['username', 'github']
-//           },
-//           { model: Comment,
-//           attributes: ['comment', 'comment', 'comment_date', 'user_id'],
-//           include: {
-//             model: User,
-//             attributes: ['username', 'github']
-//           }}
-//           ]}],
-//     });
+router.get('/band-profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const bandData = await Band.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post,
+        include: [
+          {
+          model: Band,
+          attributes: ['username', 'band_name', 'email', 'manager_name']
+          },
+          // { model: Comment,
+          // attributes: ['comment', 'comment', 'comment_date', 'user_id'],
+          // include: {
+          //   model: User,
+          //   attributes: ['username', 'github']
+          // }}
+          ]}],
+    });
 
-//     const user = userData.get({ plain: true });
+    const band = bandData.get({ plain: true });
 
-//     res.render('profile', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render('band-profile', {
+      ...band,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 // router.get('/post', withAuth, async (req, res) => {
