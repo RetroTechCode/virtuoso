@@ -33,6 +33,14 @@ Band.init(
         type: DataTypes.STRING,
         allowNull: true
       },
+      phone: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      location: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       date_created: {
         type: DataTypes.DATE,
         allowNull: true,

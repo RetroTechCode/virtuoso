@@ -11,6 +11,7 @@ const bandSeeds = [
     fk_instrument: "Drums",
     need_date: `2/23/2023`,
     email: "brick@test.com",
+    phone: "(330) 123-4567",
     password: "bandPass1",
     auditioner_id: 2,
   },
@@ -24,6 +25,7 @@ const bandSeeds = [
     fk_instrument: "Bass",
     need_date: `2/25/2023`,
     email: "travis@test.com",
+    phone: "(123) 456-7890",
     password: "bandPass2",
     auditioner_id: 3,
   },
@@ -37,6 +39,7 @@ const bandSeeds = [
     fk_instrument: "Guitar",
     need_date: `3/1/2023`,
     email: "jake@statefarm.com",
+    phone: "(614) 012-3456",
     password: "bandPass3",
     auditioner_id: 1,
   },
@@ -50,6 +53,7 @@ const bandSeeds = [
     fk_instrument: "Drums",
     need_date: `3/1/2023`,
     email: "paul@beatles.com",
+    phone: "(212) 800-9898",
     password: "bandPass4"
   },
 
