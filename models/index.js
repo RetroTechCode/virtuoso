@@ -4,12 +4,12 @@ const Stats = require('./Stats');
 
 //create associations
 Band.hasMany(Auditioner, {
-    foreignKey: 'band_id',
+    foreignKey: 'auditioner_id',
     onDelete: 'CASCADE'
 });
 
 Auditioner.belongsTo(Band, {
-    foreignKey: 'band_id'
+    foreignKey: 'auditioner_id'
 })
 
 Band.hasMany(Stats, {
