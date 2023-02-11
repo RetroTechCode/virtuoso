@@ -1,8 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our Post model
-class Band extends Model {}
+
+class Band extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+}
 
 // create fields/columns for Band model
 Band.init(
@@ -12,6 +16,10 @@ Band.init(
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
+      },
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       band_name: {
         type: DataTypes.STRING,
@@ -27,7 +35,7 @@ Band.init(
       },
       need_date: {
         type: DataTypes.DATE,
-        allowNull: false,
+        allowNull: true,
         defaultValue: DataTypes.NOW,
       },
       email: {
@@ -61,6 +69,17 @@ Band.init(
       }
     },
     {
+      // create hooks that will hash password
+      hooks: {
+        beforeCreate: async (newUserData) => {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+          return newUserData;
+        },
+        beforeUpdate: async (updatedUserData) => {
+          updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+          return updatedUserData;
+        },
+      },
       sequelize,
       timestamps: false,
       freezeTableName: true,
