@@ -1,13 +1,13 @@
 {{!-- Placeholder file, may need changed or deleted later --}}
 <div class="row" id="sortable"></div>
-    {{#each bands as |band|}}
+    {{#each posts as |post|}}
     <div class="col-md-3">
       <div class="card-sub"> <img class="card-img-top img-fluid" id="user-prof-pic" alt="Card image cap">
         <div class="card-block">
           <div class="card-header">                
-            <h4 class="employee-name">Job Posted</h4>
+            <h4 class="employee-name">{{title}}</h4>
             <div class="employee-details">
-              <div class="user-name">Posted by {{band_name}} on {{format_date band.date_created}}</div>            
+              <div class="user-name">Posted by {{post.band.band_name}} on {{format_date date_created}}</div>            
               <div class="post">{{post_content}}</div>
             </div>
           </div>

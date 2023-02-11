@@ -1,29 +1,33 @@
 const router = require('express').Router();
-const { Auditioner, Band, Stats } = require('../models');
+const { Auditioner, Band, Post, Stats } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
-    const bandData = await Band.findAll({
+    const postData = await Post.findAll({
       include: [
         {
-          model: Auditioner,
-          attributes: [['id', 'auditioner_id'], 'first_name', 'last_name', 'instrument', 'years_played', 'email'],
+          model: Band,
+          attributes: ['band_name', 'manager_name'],
         },
-        {
-        model: Stats,
-        attributes: [['id', 'stats_id'], 'month_date', 'monthly_spotify_listeners', 'monthly_avg_stage_time']
-        }
+        // {
+        //   model: Auditioner,
+        //   attributes: [['id', 'auditioner_id'], 'first_name', 'last_name', 'instrument', 'years_played', 'email'],
+        // },
+        // {
+        // model: Stats,
+        // attributes: [['id', 'stats_id'], 'month_date', 'monthly_spotify_listeners', 'monthly_avg_stage_time']
+        // }
       ]
     });
 
     // Serialize data so the template can read it
-    const bands = bandData.map((band) => band.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      bands, 
+      posts, 
       logged_in: req.session.logged_in
     });
   } catch (err) {
