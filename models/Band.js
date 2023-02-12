@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 
@@ -29,15 +30,23 @@ Band.init(
         type: DataTypes.STRING,
         allowNull: true
       },
-      post_content: {
+      // post_content: {
+      //   type: DataTypes.STRING,
+      //   allowNull: true
+      // },
+      phone: {
         type: DataTypes.STRING,
         allowNull: true
       },
-      date_created: {
-        type: DataTypes.DATE,
-        allowNull: true,
-        defaultValue: DataTypes.NOW,
+      location: {
+        type: DataTypes.STRING,
+        allowNull: true
       },
+      // date_created: {
+      //   type: DataTypes.DATE,
+      //   allowNull: true,
+      //   defaultValue: DataTypes.NOW,
+      // },
       need_date: {
         type: DataTypes.DATE,
         allowNull: true,

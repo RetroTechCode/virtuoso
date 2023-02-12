@@ -1,5 +1,6 @@
 const seedAuditioners = require('./auditioner-seeds');
 const seedBands = require('./band-seeds');
+const seedPosts = require('./post-seeds');
 const seedStats = require('./stats-seeds');
 
 const sequelize = require('../config/connection');
@@ -13,6 +14,9 @@ const seedAll = async () => {
   
   await seedBands();
     console.log('\n----- BANDS SEEDED -----\n');
+
+  await seedPosts();
+  console.log('\n----- POSTS SEEDED -----\n');
 
   await seedStats();
     console.log('\n----- STATS SEEDED -----\n');
