@@ -29,6 +29,12 @@
   <main class='p-1 mb-4 text-black text-center'>
     <div class = 'container text-center m-10' id="banner">
       <h4>Looking For<br>A<br>Band?<br>
+      <div>
+
+        <!-- Template for Chart.js -->
+  <canvas id="myChart"></canvas>
+  
+</div>
       ---------------------------------------------------------------------- <br> </h4>
     </div>
     <div class="row" id="sortable">
@@ -48,6 +54,33 @@
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
     crossorigin="anonymous">
   </script>
+ 
+ <!-- Template for Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+ 
   <script src="./src/template.js"></script>
 </body>
 
