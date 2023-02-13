@@ -117,6 +117,7 @@ router.get('/band-profile', withAuth, async (req, res) => {
     const bandData = await Band.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post,
+        attributes: ['title', 'post_content', 'date_created'],
         include: [
           {
           model: Band,
@@ -143,24 +144,24 @@ router.get('/band-profile', withAuth, async (req, res) => {
 });
 
 
-// router.get('/post', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Post }],
-//     });
+router.get('/post', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const bandData = await Band.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],
+    });
 
-//     const user = userData.get({ plain: true });
+    const band = bandData.get({ plain: true });
 
-//     res.render('post', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render('post', {
+      ...band,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 

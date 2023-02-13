@@ -17,7 +17,7 @@
       <form class="d-inline-flex">
         {{#if logged_in}}     
         <a href="/" class="btn btn-light my-2 m-sm-1" id="home-button" type="submit">Home</a>
-        <a href="/profile" class="btn btn-light my-2 m-sm-1" id="dashboard-button" type="submit">Profile</a>
+        <a href="/band-profile" class="btn btn-light my-2 m-sm-1" id="dashboard-button" type="submit">Profile</a>
         <button class="btn btn-danger my-2 m-sm-1" id="logout-button" type="submit">Logout</button>
         {{else}}
         <a href="/login" class="btn btn-success my-2 m-sm-1" id="login-button" type="submit">Login</a>
@@ -28,11 +28,8 @@
 
   <main class='p-1 mb-4 text-black text-center'>
     <div class = 'container text-center m-10' id="banner">
-      <h4>Looking For<br>A<br>Band?<br>
+      {{!-- <h4>Looking For<br>A<br>Band?<br> --}}
       <div>
-
-        <!-- Template for Chart.js -->
-  <canvas id="myChart"></canvas>
   
 </div>
       ---------------------------------------------------------------------- <br> </h4>
