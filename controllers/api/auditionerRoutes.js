@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
         const auditionerData = await Auditioner.create(req.body);
 
         req.session.save(() => {
-            req.session.auditioner_id = auditionerData.id;
+            req.session.user_id = auditionerData.id;
             req.session.logged_in = true;
 
             res.status(200).json(auditionerData);

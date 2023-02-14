@@ -58,27 +58,59 @@
 <script>
   const ctx = document.getElementById('myChart');
 
+  
+
+  let dataStageTime = {
+    label: "Avg Stage Time",
+    data: [94, 71, 106, 49, 54],
+    lineTension: 0,
+    fill: false,
+    borderColor: 'lightblue',
+    yAxisID: 'y',
+  };
+
+  let dataSpotify = {
+    label: "Avg Spotify Listeners",
+    data: [1299, 1203, 1461, 1529, 1593],
+    lineTension: 0,
+    fill: false,
+    borderColor: 'lightgreen',
+    yAxisID: 'y1',
+  };
+
+  let speedData = {
+    labels: ['October', 'November', 'December', 'January', 'February'],
+    datasets: [dataStageTime, dataSpotify]
+  };
+
   new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
+    type: 'line',
+    labels: ['October', 'November', 'December', 'January', 'February'],
+    data: speedData,
     options: {
       scales: {
         y: {
-          beginAtZero: true
-        }
+          type: 'linear',
+          display: true,
+          position: 'left',
+        },
+        y1: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+
+          // grid line settings
+          grid: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
+        },
       }
     }
   });
 </script>
  
   <script src="./src/template.js"></script>
+
 </body>
 
 </html>

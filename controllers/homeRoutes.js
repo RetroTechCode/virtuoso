@@ -10,10 +10,12 @@ router.get('/', withAuth, async (req, res) => {
         {
           model: Band,
           attributes: ['band_name', 'manager_name'],
-        },
-        {
-          model: Auditioner,
-          attributes: [['id', 'auditioner_id'], 'first_name', 'last_name', 'username', 'instrument', 'years_played', 'email'],
+          include: [
+            {
+              model: Auditioner,
+              attributes: [['id', 'auditioner_id'], 'first_name', 'last_name', 'username', 'instrument', 'years_played', 'email'],
+            },
+          ]
         },
         // {
         // model: Stats,
