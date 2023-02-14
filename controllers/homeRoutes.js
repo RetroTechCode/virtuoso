@@ -11,10 +11,10 @@ router.get('/', withAuth, async (req, res) => {
           model: Band,
           attributes: ['band_name', 'manager_name'],
         },
-        // {
-        //   model: Auditioner,
-        //   attributes: [['id', 'auditioner_id'], 'first_name', 'last_name', 'instrument', 'years_played', 'email'],
-        // },
+        {
+          model: Auditioner,
+          attributes: [['id', 'auditioner_id'], 'first_name', 'last_name', 'username', 'instrument', 'years_played', 'email'],
+        },
         // {
         // model: Stats,
         // attributes: [['id', 'stats_id'], 'month_date', 'monthly_spotify_listeners', 'monthly_avg_stage_time']

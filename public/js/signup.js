@@ -2,10 +2,10 @@ const signupFormHandler = async (event) => {
   event.preventDefault();
 
   const band_name = document.querySelector('#band_name').value.trim();
-  const username = document.querySelector('#username').value.trim();
+  const username = document.querySelector('#band_user').value.trim();
   const manager_name = document.querySelector('#manager_name').value.trim();
-  const email = document.querySelector('#email').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const email = document.querySelector('#band_email').value.trim();
+  const password= document.querySelector('#band_password').value.trim();
 
   if (band_name && username && email && password) {
     const response = await fetch('/api/bands', {
