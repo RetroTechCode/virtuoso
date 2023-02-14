@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Auditioner, Band, Post, Stats } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
