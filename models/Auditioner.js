@@ -21,6 +21,10 @@ Auditioner.init(
         type: DataTypes.STRING,
         allowNull: false
       },
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       instrument: {
         type: DataTypes.STRING,
         allowNull: false

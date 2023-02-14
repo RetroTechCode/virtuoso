@@ -4,6 +4,7 @@ const auditionerSeeds = [
   {
     first_name: "Joshua",
     last_name: "O",
+    username: "JoshO",
     instrument: "Guitar",
     fk_genre: "Rock",    
     email: "test1@yahoo.com",
@@ -12,6 +13,7 @@ const auditionerSeeds = [
   {
     first_name: "Dana",
     last_name: "B",
+    username: "DanaB",
     instrument: "Drums",
     fk_genre: "Folk",    
     email: "test2@yahoo.com",
@@ -20,6 +22,7 @@ const auditionerSeeds = [
   {
     first_name: "Warfa",
     last_name: "H",
+    username: "WarfaH",
     instrument: "Keyboards",
     fk_genre: "Country",    
     email: "test3@yahoo.com",
@@ -28,6 +31,7 @@ const auditionerSeeds = [
   {
     first_name: "Josh",
     last_name: "L",
+    username: "JoshL",
     instrument: "Triangle",
     fk_genre: "R&B",
     email: "test4@yahoo.com",
