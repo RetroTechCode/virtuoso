@@ -179,7 +179,7 @@ form:after {
 #username { background-position: 10px 10px !important }
 #email { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
-#datalistOptions { background-position: 10px 10px !important }
+#datalistOptions { background-position: 10px -53px !important }
 #content form input[type="submit"] {
   background: rgb(254,231,154);
   background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);
