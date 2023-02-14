@@ -19,15 +19,15 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        const auditionerData = await Auditioner.findOne({ where: { email: req.body.email } });
+        const auditionerData = await Auditioner.findOne({ where: { email: req.body.username } });
         if (!auditionerData) {
-            res.status(400).json({ message: 'The email or password is incorrect. Please try again.' })
+            res.status(400).json({ message: 'The username or password is incorrect. Please try again.' })
             return;
         }
 
         const passwordCheck = await auditionerData.checkPassword(req.body.password);
         if (!passwordCheck) {
-            res.status(400).json({ message: 'The email or password is incorrect. Please try again.' })
+            res.status(400).json({ message: 'The username or password is incorrect. Please try again.' })
             return;
         }
 
