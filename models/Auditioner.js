@@ -2,7 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Post model
-class Auditioner extends Model {}
+class Auditioner extends Model {checkPassword(loginPw) {
+  return bcrypt.compareSync(loginPw, this.password);
+}
+}
 
 // create fields/columns for Band model
 Auditioner.init(
