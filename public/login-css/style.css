@@ -176,9 +176,11 @@ form:after {
   outline: none;
 }
 
-#username { background-position: 10px 10px !important }
-#email { background-position: 10px 10px !important }
-#password { background-position: 10px -53px !important }
+#band_name { background-position: 10px 10px !important }
+#manager_name { background-position: 10px 10px !important }
+#band_user { background-position: 10px 10px !important }
+#band_email { background-position: 10px 10px !important }
+#band_password { background-position: 10px -53px !important }
 #datalistOptions { background-position: 10px -53px !important }
 #content form input[type="submit"] {
   background: rgb(254,231,154);

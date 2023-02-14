@@ -4,14 +4,14 @@ const loginFormHandler = async (event) => {
   console.log('button pushed');
 
   // Collect values from the login form
-  const username = document.querySelector('#username').value.trim();
-  const password = document.querySelector('#password').value.trim();
+  const band_user = document.querySelector('#band_user').value.trim();
+  const band_password = document.querySelector('#band_password').value.trim();
 
-  if (username && password) {
+  if (band_user && band_password) {
     // Send a POST request to the API endpoint
     const response = await fetch('/api/bands/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ band_user, band_password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
