@@ -30,10 +30,6 @@ Band.init(
         type: DataTypes.STRING,
         allowNull: true
       },
-      // post_content: {
-      //   type: DataTypes.STRING,
-      //   allowNull: true
-      // },
       phone: {
         type: DataTypes.STRING,
         allowNull: true
@@ -42,11 +38,6 @@ Band.init(
         type: DataTypes.STRING,
         allowNull: true
       },
-      // date_created: {
-      //   type: DataTypes.DATE,
-      //   allowNull: true,
-      //   defaultValue: DataTypes.NOW,
-      // },
       need_date: {
         type: DataTypes.DATE,
         allowNull: true,
