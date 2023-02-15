@@ -9,18 +9,7 @@
   <title>Virtuoso</title>
 </head>
 <body>
-  {{!-- <header>
-    <nav class="navbar navbar-dark" id="header">
-      <a class="mx-2 navbar-brand"><h2 class="position-absolute top-0 start-0 text-dark">Virtuoso</h2></a>
-    </nav>
-  </header> --}}
-
   <main class ='p-1 mb-4 text-black text-center'>    
-    {{!-- <form class="d-inline-flex">        
-      <button class="btn btn-light my-2 m-sm-1" id="home-button" type="submit">Home</button>
-      <button class="btn btn-light my-2 m-sm-1" id="dashboard-button" type="submit">Dashboard</button>
-      <button class="btn btn-danger my-2 m-sm-1" id="logout-button" type="submit">Logout</button>
-    </form> --}}
     <div class = 'container text-center m-10' id="banner">
       <h4>Welcome, {{band_name}}</h4>
     </div>
@@ -39,11 +28,9 @@
                 <img src="concert-audience.jpg" alt="avatar2" class="rounded-circle img-fluid" style="width: 150px;">
                 {{/if}}     
                 <h5 class="my-3">{{band_name}}</h5>
-                <p class="text-muted mb-1">[GENRE PLACEHOLDER]</p>
+                <p class="text-muted mb-1">{{genre}}</p>
                 <p class="text-muted mb-4">{{manager_name}}</p>
                 <div class="d-flex justify-content-center mb-2">
-                  <a href="/post" button type="button" class="btn btn-primary">Post</button></a>
-                  <button type="button" class="btn btn-outline-primary ms-1">Edit</button>
                 </div>
               </div>
             </div>

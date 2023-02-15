@@ -1,7 +1,7 @@
 // post a new user
 
 const router = require('express').Router();
-const { Band } = require('../../models');
+const { Band, Post } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -15,6 +15,30 @@ router.post('/', async (req, res) => {
     });
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const bandData = await Band.findByPk(req.params.id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post,
+        attributes: ['title', 'post_content', 'date_created'],
+        include: [
+          {
+          model: Band,
+          attributes: [['id', 'band_id'], 'username', 'band_name', 'genre', 'profile_pic', 'email', 'manager_name']
+          },
+          ]}],
+    });
+    const band = bandData.get({ plain: true });
+
+    res.render('band', {
+      ...band,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
