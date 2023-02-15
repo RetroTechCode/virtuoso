@@ -8,7 +8,7 @@
           <div class="card-header">                
             <h4 class="employee-name">{{title}}</h4>
             <div class="employee-details">
-              <div class="user-name">Posted by {{post.band.band_name}} on {{format_date date_created}}</div>            
+              <div class="user-name">Posted by <a href="api/bands/{{band_id}}">{{post.band.band_name}}</a> on {{format_date date_created}}</div>
               <div class="post">{{post_content}}</div>
             </div>
           </div>
