@@ -15,6 +15,10 @@ router.get('/', withAuth, async (req, res) => {
               model: Auditioner,
               attributes: [['id', 'auditioner_id'], 'first_name', 'last_name', 'username', 'instrument', 'years_played', 'email'],
             },
+            {
+              model: Stats,
+              attributes: ['monthly_spotify_listeners', 'monthly_avg_stage_time']
+            }
           ]
         },
       ]

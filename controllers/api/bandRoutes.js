@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
         include: [
           {
           model: Band,
-          attributes: [['id', 'band_id'], 'username', 'band_name', 'email', 'manager_name']
+          attributes: [['id', 'band_id'], 'username', 'band_name', 'genre', 'profile_pic', 'email', 'manager_name']
           },
           ]}],
     });

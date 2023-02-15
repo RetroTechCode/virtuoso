@@ -38,10 +38,18 @@ Band.init(
         type: DataTypes.STRING,
         allowNull: true
       },
+      genre: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
       need_date: {
         type: DataTypes.DATE,
         allowNull: true,
         defaultValue: DataTypes.NOW,
+      },
+      profile_pic: {
+        type: DataTypes.STRING,
+        allowNull: true
       },
       email: {
         type: DataTypes.STRING,
