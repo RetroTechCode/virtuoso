@@ -1,7 +1,7 @@
 // post a new user
 
 const router = require('express').Router();
-const { Band, Post } = require('../../models');
+const { Band, Post, Stats } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -22,6 +22,10 @@ router.get('/:id', async (req, res) => {
   try {
     const bandData = await Band.findByPk(req.params.id, {
       attributes: { exclude: ['password'] },
+      include: { 
+        model: Stats,
+        attributes: [['id', 'stats_id'], 'month_date', 'monthly_spotify_listeners', 'monthly_avg_stage_time']
+      },
       include: [{ model: Post,
         attributes: ['title', 'post_content', 'date_created'],
         include: [

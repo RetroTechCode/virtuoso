@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <title>Virtuoso</title>
+  <a href="/"><title>Virtuoso</title></a>
 </head>
 
 <body>
@@ -30,6 +30,14 @@
                 <h5 class="my-3">{{band_name}}</h5>
                 <p class="text-muted mb-1">{{genre}}</p>
                 <p class="text-muted mb-4">{{manager_name}}</p>
+                <p class="test-stats">Test: {{band.monthly_spotify_listeners}}</p>
+                {{!-- {{#each band}} --}}
+                {{#if stats.length}}
+                  {{#each stats as |stat|}}
+                  <div>Test: {{stat.monthly_spotify_listeners}}</div>
+                  {{/each}}
+                {{/if}}
+                {{!-- {{/each}} --}}
                 <div class="d-flex justify-content-center mb-2">
                 </div>
               </div>
@@ -116,6 +124,7 @@
       </div>
     </section>
     </div>
+
   </main>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -125,5 +134,56 @@
     </script>
   <script src="./src/template.js"></script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('myChart'); 
 
+  let dataStageTime = {
+    label: "Avg Stage Time",
+    data: [94, 71, 106, 49, 54],
+    lineTension: 0,
+    fill: false,
+    borderColor: 'lightblue',
+    yAxisID: 'y',
+  };
+
+  let dataSpotify = {
+    label: "Avg Spotify Listeners",
+    data: [1299, 1203, 1461, 1529, 1593],
+    lineTension: 0,
+    fill: false,
+    borderColor: 'lightgreen',
+    yAxisID: 'y1',
+  };
+
+  let speedData = {
+    labels: ['October', 'November', 'December', 'January', 'February'],
+    datasets: [dataStageTime, dataSpotify]
+  };
+
+  new Chart(ctx, {
+    type: 'line',
+    labels: ['October', 'November', 'December', 'January', 'February'],
+    data: speedData,
+    options: {
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+        },
+        y1: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+
+          // grid line settings
+          grid: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
+        },
+      }
+    }
+  });
+</script>
 </html>

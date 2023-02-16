@@ -45,6 +45,11 @@
                   <a href="/post" button type="button" class="btn btn-primary">Post</button></a>
                   <button type="button" class="btn btn-outline-primary ms-1">Edit</button>
                 </div>
+                {{#if stats.length}}
+                  {{#each stats as |stat|}}
+                  <div>Test: {{stat.monthly_spotify_listeners}}</div>
+                  {{/each}}
+                {{/if}}
               </div>
             </div>
             <div class="card mb-4 mb-lg-0">
