@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,9 +14,13 @@
 <body>
   <header>
     <nav class="navbar navbar-dark" id="header">
-      <a class="mx-2 navbar-brand" href="/"><h2>Virtuoso</h2></a>
+
+      <a class="mx-2 navbar-brand" href="/">
+       <div id="title"> Virtuoso </div> 
+      </a>
+
       <form class="d-inline-flex">
-        {{#if logged_in}}     
+        {{#if logged_in}}
         <a href="/" class="btn btn-light my-2 m-sm-1" id="home-button" type="submit">Home</a>
         <a href="/band-profile" class="btn btn-light my-2 m-sm-1" id="dashboard-button" type="submit">Profile</a>
         <button class="btn btn-danger my-2 m-sm-1" id="logout-button" type="submit">Logout</button>
@@ -27,34 +32,80 @@
   </header>
 
   <main class='p-1 mb-4 text-black text-center'>
-    <div class = 'container text-center m-10' id="banner">
-      {{!-- <h4>Looking For<br>A<br>Band?<br> --}}
-      <div>
-  
-</div>
-      ---------------------------------------------------------------------- <br> </h4>
-    </div>
-    <div class="row" id="sortable">
-    {{{ body }}}
+    <div>
+      {{{ body }}}
     </div>
   </main>
   <footer>
-    
+
   </footer>
 
   <!-- Render script for logged in users only -->
   <script src="/js/logout.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous">
-  </script>
- 
- <!-- Template for Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous">
+    </script>
+
+  <!-- Template for Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- 
+
+  <script>
+    const ctx = document.getElementById('myChart');
+
+
+
+    let dataStageTime = {
+      label: "Avg Stage Time",
+      data: [94, 71, 106, 49, 54],
+      lineTension: 0,
+      fill: false,
+      borderColor: 'lightblue',
+      yAxisID: 'y',
+    };
+
+    let dataSpotify = {
+      label: "Avg Spotify Listeners",
+      data: [1299, 1203, 1461, 1529, 1593],
+      lineTension: 0,
+      fill: false,
+      borderColor: 'lightgreen',
+      yAxisID: 'y1',
+    };
+
+    let speedData = {
+      labels: ['October', 'November', 'December', 'January', 'February'],
+      datasets: [dataStageTime, dataSpotify]
+    };
+
+    new Chart(ctx, {
+      type: 'line',
+      labels: ['October', 'November', 'December', 'January', 'February'],
+      data: speedData,
+      options: {
+        scales: {
+          y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+          },
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+
+            // grid line settings
+            grid: {
+              drawOnChartArea: false, // only want the grid lines for one axis to show up
+            },
+          },
+        }
+      }
+    });
+  </script>
+
+  <script src="./js/index.js"></script>
   <script src="./src/template.js"></script>
 
 </body>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,15 @@
   <link rel="stylesheet" href="./css/style.css">
   <a href="/"><title>Virtuoso</title></a>
 </head>
+
 <body>
-  <main class ='p-1 mb-4 text-black text-center'>    
-    <div class = 'container text-center m-10' id="banner">
+  <main class='p-1 mb-4 text-black text-center'>
+    <div class='container text-center m-10' id="banner">
       <h4>Welcome, {{band_name}}</h4>
     </div>
 
     <section style="background-color: #eee;">
       <div class="container py-5">
-
-    
         <div class="row">
           <div class="col-lg-4">
             <div class="card mb-4">
@@ -44,16 +44,11 @@
             </div>
             <div class="card mb-4 mb-lg-0">
               <div class="card-body p-0">
-                  <!-- Template for Chart.js -->
-                  <canvas id="myChart"></canvas>
+                <!-- Template for Chart.js -->
+                <canvas id="myChart"></canvas>
               </div>
             </div>
-          
           </div>
-
-
-
-          
           <div class="col-lg-8">
             <div class="card mb-4">
               <div class="card-body">
@@ -96,50 +91,47 @@
             </div>
             <h4 style="text-align:left; font-size: 1.2rem;">{{band_name}} Posts:</h4>
             {{!-- <div class="row" id="sortable"></div> --}}
-{{#if posts.length}}
-    {{#each posts as |post|}}
-        <div class="row" id="sortable"></div>
-          <div id="sortable">
-            <div id="card-title">
-              <div class="card-sub-profile"> <img class="card-img-top img-fluid d-flex justify-content-between" id="user-prof-pic">
-              {{!-- <a href="/posts/{{post.id}}" class="btn btn-light d-flex justify-content-between" id="edit-post-btn">Edit</a> --}}
-            </div>
-              <div class="card-block">
-                <div class="card-header">                
-                  <h4 class="employee-name-profile">{{post.title}}</h4>
-                  <div class="employee-details">
-                    <div class="user-name">Created by {{band.username}} on {{format_date post.date_created}}</div>            
-                    <div class="post">&nbsp;{{post.post_content}}</div>
+            {{#if posts.length}}
+            {{#each posts as |post|}}
+            <div class="row" id="sortable"></div>
+            <div id="sortable">
+              <div id="card-title">
+                <div class="card-sub-profile"> <img class="card-img-top img-fluid d-flex justify-content-between"
+                    id="user-prof-pic">
+                  {{!-- <a href="/posts/{{post.id}}" class="btn btn-light d-flex justify-content-between"
+                    id="edit-post-btn">Edit</a> --}}
+                </div>
+                <div class="card-block">
+                  <div class="card-header">
+                    <h4 class="employee-name-profile">{{post.title}}</h4>
+                    <div class="employee-details">
+                      <div class="user-name">Created by {{band.username}} on {{format_date post.date_created}}</div>
+                      <div class="post">&nbsp;{{post.post_content}}</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>        
-            
-        </div>
-    {{/each}}
 
-{{else}}
-<h6 class="pb-4 has-text-centered is-italic">Start Posting!</h6>
-
-{{/if}}
-            </div>
           </div>
+          {{/each}}
+          {{else}}
+          <h6 class="pb-4 has-text-centered is-italic">Start Posting!</h6>
+          {{/if}}
         </div>
       </div>
+      </div>
+      </div>
     </section>
-
-
     </div>
 
   </main>
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous">
+    </script>
   <script src="./src/template.js"></script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
