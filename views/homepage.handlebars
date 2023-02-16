@@ -1,19 +1,19 @@
-{{!-- Placeholder file, may need changed or deleted later --}}
-<h4>Looking For<br>A<br>Band?<br></h4>
-<div class="row" id="sortable"></div>
-    {{#each posts as |post|}}
-    <div class="col-md-3">
-      <div class="card-sub"> <img class="card-img-top img-fluid" id="user-prof-pic" alt="Card image cap">
-        <div class="card-block">
-          <div class="card-header">                
-            <h4 class="employee-name">{{title}}</h4>
-            <div class="employee-details">
-              <div class="user-name">Posted by <a href="api/bands/{{band_id}}">{{post.band.band_name}}</a> on {{format_date date_created}}</div>
-              <div class="post">{{post_content}}</div>
-            </div>
+<h3><br>Looking For a band?<br><br></h3>
+<div class="row" id="sortable">
+  {{#each posts as |post|}}
+  <div class="col-md-3">
+    <div class="card-sub"> <img class="card-img-top img-fluid" id="user-prof-pic" alt="Card image cap">
+      <div class="card-block">
+        <div class="card-header">
+          <h4 class="employee-name">{{title}}</h4>
+          <div class="employee-details">
+            <div class="user-name">Posted by <a href="api/bands/{{band_id}}">{{post.band.band_name}}</a> on
+              {{format_date date_created}}</div>
+            <div class="post">{{post_content}}</div>
           </div>
         </div>
       </div>
     </div>
-    {{/each}}
+  </div>
+  {{/each}}
 </div>
