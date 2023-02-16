@@ -16,6 +16,16 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
   background: transparent;
 }
+#title{
+  font-size: 24pt;
+  position: absolute;
+  top: 0px;
+}
+#title:hover{
+  color: black;
+  font-style: italic;
+  cursor: pointer;
+}
 body {
   background: #DCDDDF url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
   color: #000;
@@ -175,13 +185,14 @@ form:after {
   border: 1px solid #ed1c24;
   outline: none;
 }
-
+#username { background-position: 10px 10px !important }
+#password { background-position: 10px 10px !important }
 #band_name { background-position: 10px 10px !important }
 #manager_name { background-position: 10px 10px !important }
 #band_user { background-position: 10px 10px !important }
 #band_email { background-position: 10px 10px !important }
-#band_password { background-position: 10px -53px !important }
-#datalistOptions { background-position: 10px -53px !important }
+#band_password { background-position: 10px 10px !important }
+#datalistOptions { background-position: 10px 10px !important }
 #content form input[type="submit"] {
   background: rgb(254,231,154);
   background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);
