@@ -14,7 +14,16 @@
   background: #fff url('/guitars-gf5520d351_640.jpg');
 }
 
+#title{
+  font-size: 24pt;
+  position: absolute;
+  top: 0px;
+}
+
 #title:hover{
+  font-size: 24pt;
+  position: absolute;
+  top: 0px;
   color: black;
   font-style: italic;
   cursor: pointer;
