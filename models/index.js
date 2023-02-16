@@ -27,8 +27,8 @@ Band.hasMany(Stats, {
     onDelete: 'CASCADE'
 });
 
-// Stats.belongsTo(Band, {
-//     foreignKey: 'band_id'
-// })
+Stats.belongsTo(Band, {
+    foreignKey: 'band_id'
+})
 
 module.exports = {Auditioner, Band, Post, Stats};
