@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Band,
-          attributes: ['band_name', 'manager_name'],
+          attributes: ['band_name', 'manager_name', 'profile_pic'],
           include: [
             {
               model: Auditioner,

@@ -13,7 +13,7 @@
 <body>
   <header>
     <nav class="navbar navbar-dark" id="header">
-      <a class="mx-2 navbar-brand"><h2>Virtuoso</h2></a>
+      <a class="mx-2 navbar-brand" href="/"><h2>Virtuoso</h2></a>
       <form class="d-inline-flex">
         {{#if logged_in}}     
         <a href="/" class="btn btn-light my-2 m-sm-1" id="home-button" type="submit">Home</a>
@@ -54,60 +54,6 @@
  
  <!-- Template for Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-  const ctx = document.getElementById('myChart');
-
-  
-
-  let dataStageTime = {
-    label: "Avg Stage Time",
-    data: [94, 71, 106, 49, 54],
-    lineTension: 0,
-    fill: false,
-    borderColor: 'lightblue',
-    yAxisID: 'y',
-  };
-
-  let dataSpotify = {
-    label: "Avg Spotify Listeners",
-    data: [1299, 1203, 1461, 1529, 1593],
-    lineTension: 0,
-    fill: false,
-    borderColor: 'lightgreen',
-    yAxisID: 'y1',
-  };
-
-  let speedData = {
-    labels: ['October', 'November', 'December', 'January', 'February'],
-    datasets: [dataStageTime, dataSpotify]
-  };
-
-  new Chart(ctx, {
-    type: 'line',
-    labels: ['October', 'November', 'December', 'January', 'February'],
-    data: speedData,
-    options: {
-      scales: {
-        y: {
-          type: 'linear',
-          display: true,
-          position: 'left',
-        },
-        y1: {
-          type: 'linear',
-          display: true,
-          position: 'right',
-
-          // grid line settings
-          grid: {
-            drawOnChartArea: false, // only want the grid lines for one axis to show up
-          },
-        },
-      }
-    }
-  });
-</script>
  
   <script src="./src/template.js"></script>
 
