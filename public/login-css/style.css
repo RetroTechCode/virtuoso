@@ -86,14 +86,7 @@ form:after {
   line-height: 20px;
   margin: 10px 0 30px;
 }
-#content h1:before,
-#content h1:after {
-  content: "";
-  height: 1px;
-  position: absolute;
-  top: 10px;
-  width: 27%;
-}
+
 #content h1:after {
   background: rgb(126,126,126);
   background: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
