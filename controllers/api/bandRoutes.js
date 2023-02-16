@@ -22,18 +22,22 @@ router.get('/:id', async (req, res) => {
   try {
     const bandData = await Band.findByPk(req.params.id, {
       attributes: { exclude: ['password'] },
-      include: { 
-        model: Stats,
-        attributes: [['id', 'stats_id'], 'month_date', 'monthly_spotify_listeners', 'monthly_avg_stage_time']
-      },
-      include: [{ model: Post,
-        attributes: ['title', 'post_content', 'date_created'],
+      include: [{ model: Stats,
+        attributes: ['id', 'month_date', 'monthly_spotify_listeners', 'monthly_avg_stage_time'],
         include: [
           {
           model: Band,
-          attributes: [['id', 'band_id'], 'username', 'band_name', 'genre', 'profile_pic', 'email', 'manager_name']
+          attributes: ['id', 'username', 'band_name', 'genre', 'profile_pic', 'email', 'manager_name']
           },
-          ]}],
+          ]},
+        { model: Post,
+          attributes: ['title', 'post_content', 'date_created'],
+          include: [
+            {
+            model: Band,
+            attributes: [['id', 'band_id'], 'username', 'band_name', 'genre', 'profile_pic', 'email', 'manager_name']
+            },
+            ]}],
     });
     const band = bandData.get({ plain: true });
 
