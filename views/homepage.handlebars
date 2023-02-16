@@ -2,7 +2,11 @@
 <div class="row" id="sortable">
   {{#each posts as |post|}}
   <div class="col-md-3">
+    {{#if post.band.profile_pic}}
     <div class="card-sub"> <img src={{post.band.profile_pic}} class="card-img-top img-fluid" id="user-prof-pic" alt="Card image cap">
+    {{else}}
+    <div class="card-sub"> <img src="/img/concert-audience.jpg" class="card-img-top img-fluid" id="user-prof-pic" alt="Card image cap">
+    {{/if}}
       <div class="card-block">
         <div class="card-header">
           <h4 class="employee-name">{{title}}</h4>

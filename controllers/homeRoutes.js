@@ -48,7 +48,7 @@ router.get('/band-profile', withAuth, async (req, res) => {
         include: [
           {
           model: Band,
-          attributes: [['id', 'band_id'], 'username', 'band_name', 'email', 'manager_name']
+          attributes: [['id', 'band_id'], 'username', 'band_name', 'email', 'genre', 'manager_name']
           },
           ]}],
     });
