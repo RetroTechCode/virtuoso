@@ -1,5 +1,9 @@
 # Virtuoso
 
+![Virtuoso homepage showing an image of the landing page, with band posts](./public/img/Virtuoso-Main-Page.png)
+![Login Page](./public/img/Virtuoso-Login.png)
+![Band Page that shows Chart.js for stream, band info and posts](./public/img/Virtuoso-Band-Page.png)
+
 ![License Badge](https://img.shields.io/badge/license-MIT-brightgreen)
 
 ## Table of Contents
